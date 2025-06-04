@@ -48,13 +48,13 @@ public class DatabaseInitializer implements CommandLineRunner {
             rolAdmin.setNombre(Rol.NombreRol.ROL_ADMIN);
             rolRepository.save(rolAdmin);
             
-            Rol rolDocente = new Rol();
-            rolDocente.setNombre(Rol.NombreRol.ROL_DOCENTE);
-            rolRepository.save(rolDocente);
+            Rol rolEmpleado = new Rol();
+            rolEmpleado.setNombre(Rol.NombreRol.ROL_EMPLEADO);
+            rolRepository.save(rolEmpleado);
             
-            Rol rolEstudiante = new Rol();
-            rolEstudiante.setNombre(Rol.NombreRol.ROL_ESTUDIANTE);
-            rolRepository.save(rolEstudiante);
+            Rol rolUsuario = new Rol();
+            rolUsuario.setNombre(Rol.NombreRol.ROL_USUARIO);
+            rolRepository.save(rolUsuario);
             
             System.out.println("Roles inicializados en la base de datos");
         }

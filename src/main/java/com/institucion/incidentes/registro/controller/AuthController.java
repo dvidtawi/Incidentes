@@ -137,11 +137,11 @@ public class AuthController {
         Set<Rol> roles = new HashSet<>();
 
         // Verifica si se han proporcionado roles en la solicitud de registro
-        // Si no se proporcionan roles, asigna el rol de estudiante por defecto.
+        // Si no se proporcionan roles, asigna el rol de usuario por defecto.
         if (strRoles == null) {
-            Rol estudianteRol = rolRepository.findByNombre(Rol.NombreRol.ROL_ESTUDIANTE)
+            Rol usuarioRol = rolRepository.findByNombre(Rol.NombreRol.ROL_USUARIO)
                     .orElseThrow(() -> new RuntimeException("Error: Rol no encontrado."));
-            roles.add(estudianteRol);
+            roles.add(usuarioRol);
         } else {
             strRoles.forEach(role -> {
                 switch (role) {
@@ -150,15 +150,15 @@ public class AuthController {
                             .orElseThrow(() -> new RuntimeException("Error: Rol no encontrado."));
                     roles.add(adminRol);
                     break;
-                case "docente":
-                    Rol docRol = rolRepository.findByNombre(Rol.NombreRol.ROL_DOCENTE)
+                case "empleado":
+                    Rol empleadoRol = rolRepository.findByNombre(Rol.NombreRol.ROL_EMPLEADO)
                             .orElseThrow(() -> new RuntimeException("Error: Rol no encontrado."));
-                    roles.add(docRol);
+                    roles.add(empleadoRol);
                     break;
                 default:
-                    Rol estudianteRol = rolRepository.findByNombre(Rol.NombreRol.ROL_ESTUDIANTE)
+                    Rol usuarioRol = rolRepository.findByNombre(Rol.NombreRol.ROL_USUARIO)
                             .orElseThrow(() -> new RuntimeException("Error: Rol no encontrado."));
-                    roles.add(estudianteRol);
+                    roles.add(usuarioRol);
                 }
             });
         }

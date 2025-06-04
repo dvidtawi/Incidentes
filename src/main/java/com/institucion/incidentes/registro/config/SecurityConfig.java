@@ -95,11 +95,11 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()
-                    .requestMatchers(HttpMethod.GET, "/api/incidentes/**").hasAnyRole("USUARIO", "ADMIN")
-                    .requestMatchers(HttpMethod.POST, "/api/incidentes/**").hasRole("ADMIN")
-                    .requestMatchers(HttpMethod.PUT, "/api/incidentes/**").hasRole("ADMIN")
+                    .requestMatchers(HttpMethod.GET, "/api/incidentes/**").hasAnyRole("USUARIO", "ADMIN","EMPLEADO")
+                    .requestMatchers(HttpMethod.POST, "/api/incidentes/**").hasAnyRole("ADMIN","EMPLEADO")
+                    .requestMatchers(HttpMethod.PUT, "/api/incidentes/**").hasAnyRole("ADMIN","EMPLEADO")
                     .requestMatchers(HttpMethod.DELETE, "/api/incidentes/**").hasRole("ADMIN")
-                    .requestMatchers(HttpMethod.PATCH, "/api/incidentes/**").hasRole("ADMIN")
+                    .requestMatchers(HttpMethod.PATCH, "/api/incidentes/**").hasAnyRole("ADMIN","EMPLEADO")
                 .anyRequest().authenticated()
             );
 

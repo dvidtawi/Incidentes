@@ -21,8 +21,8 @@ public class Rol {
     private NombreRol nombre;
     
     public enum NombreRol { // Enum para definir los nombres de los roles
-        ROL_ESTUDIANTE,
-        ROL_DOCENTE,
+        ROL_USUARIO,
+        ROL_EMPLEADO,
         ROL_ADMIN
     }
 }
