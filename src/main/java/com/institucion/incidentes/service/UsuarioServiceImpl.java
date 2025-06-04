@@ -22,7 +22,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario getUserById(Long id) {
         return usuarioRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con id: " + id));
+                .orElseThrow(() -> new RuntimeException("UsuarioRegistro no encontrado con id: " + id));
     }
 
     @Override
@@ -54,7 +54,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario getUserByEmail(String email) {
         return usuarioRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con email: " + email));
+                .orElseThrow(() -> new RuntimeException("UsuarioRegistro no encontrado con email: " + email));
     }
 
     @Override

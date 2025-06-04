@@ -68,7 +68,7 @@ public class IncidentServiceImpl implements IncidentService {
 
         // Verificar que el usuario existe
         Usuario usuario = usuarioRepository.findById(incidenteDTO.getUsuarioId())
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con id: " + incidenteDTO.getUsuarioId()));
+                .orElseThrow(() -> new RuntimeException("UsuarioRegistro no encontrado con id: " + incidenteDTO.getUsuarioId()));
 
         // Verificar que la categoría existe
         Categoria categoria = categoriaRepository.findById(incidenteDTO.getCategoriaId())
